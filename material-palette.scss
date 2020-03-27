@@ -1,0 +1,1472 @@
+@use "sass:map";
+$get-value: transparent;
+
+$colors: (
+  "red": (
+    "regular": (
+      "50": (
+        "neutral": #ffebee,
+        "light": #ffffff,
+        "dark": #ccb9bc
+      ),
+      "100": (
+        "neutral": #ffcdd2,
+        "light": #ffffff,
+        "dark": #cb9ca1
+      ),
+      "200": (
+        "neutral": #ef9a9a,
+        "light": #ffcccb,
+        "dark": #ba6b6c
+      ),
+      "300": (
+        "neutral": #e57373,
+        "light": #ffa4a2,
+        "dark": #af4448
+      ),
+      "400": (
+        "neutral": #ef5350,
+        "light": #ff867c,
+        "dark": #b61827
+      ),
+      "500": (
+        "neutral": #f44336,
+        "light": #ff7961,
+        "dark": #ba000d
+      ),
+      "600": (
+        "neutral": #e53935,
+        "light": #ff6f60,
+        "dark": #ab000d
+      ),
+      "700": (
+        "neutral": #d32f2f,
+        "light": #ff6659,
+        "dark": #9a0007
+      ),
+      "800": (
+        "neutral": #c62828,
+        "light": #ff5f52,
+        "dark": #8e0000
+      ),
+      "900": (
+        "neutral": #b71c1c,
+        "light": #f05545,
+        "dark": #7f0000
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ff8a80,
+        "light": #ffbcaf,
+        "dark": #c85a54
+      ),
+      "200": (
+        "neutral": #ff5252,
+        "light": #ff867f,
+        "dark": #c50e29
+      ),
+      "400": (
+        "neutral": #ff1744,
+        "light": #ff616f,
+        "dark": #c4001d
+      ),
+      "700": (
+        "neutral": #d50000,
+        "light": #ff5131,
+        "dark": #9b0000
+      ),
+    )),
+  "pink":  (
+    "regular": (
+      "50": (
+        "neutral": #fce4ec,
+        "light": #ffffff,
+        "dark": #c9b2ba
+      ),
+      "100": (
+        "neutral": #f8bbd0,
+        "light": #ffeeff,
+        "dark": #c48b9f
+      ),
+      "200": (
+        "neutral": #f48fb1,
+        "light": #ffc1e3,
+        "dark": #bf5f82
+      ),
+      "300": (
+        "neutral": #f06292,
+        "light": #ff94c2,
+        "dark": #ba2d65
+      ),
+      "400": (
+        "neutral": #ec407a,
+        "light": #ff77a9,
+        "dark": #b4004e
+      ),
+      "500": (
+        "neutral": #e91e63,
+        "light": #ff6090,
+        "dark": #b0003a
+      ),
+      "600": (
+        "neutral": #d81b60,
+        "light": #ff5c8d,
+        "dark": #a00037
+      ),
+      "700": (
+        "neutral": #c2185b,
+        "light": #fa5788,
+        "dark": #8c0032
+      ),
+      "800": (
+        "neutral": #ad1457,
+        "light": #e35183,
+        "dark": #78002e
+      ),
+      "900": (
+        "neutral": #880e4f,
+        "light": #bc477b,
+        "dark": #560027
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ff80ab,
+        "light": #ffb2dd,
+        "dark": #c94f7c
+      ),
+      "200": (
+        "neutral": #ff4081,
+        "light": #ff79b0,
+        "dark": #c60055
+      ),
+      "400": (
+        "neutral": #f50057,
+        "light": #ff5983,
+        "dark": #bb002f
+      ),
+      "700": (
+        "neutral": #c51162,
+        "light": #fd558f,
+        "dark": #8e0038
+      ),
+    )
+  ),
+  "purple":  (
+    "regular": (
+      "50": (
+        "neutral": #f3e5f5,
+        "light": #ffffff,
+        "dark": #c0b3c2
+      ),
+      "100": (
+        "neutral": #e1bee7,
+        "light": #fff1ff,
+        "dark": #af8eb5
+      ),
+      "200": (
+        "neutral": #ce93d8,
+        "light": #ffc4ff,
+        "dark": #9c64a6
+      ),
+      "300": (
+        "neutral": #ba68c8,
+        "light": #ee98fb,
+        "dark": #883997
+      ),
+      "400": (
+        "neutral": #ab47bc,
+        "light": #df78ef,
+        "dark": #790e8b
+      ),
+      "500": (
+        "neutral": #9c27b0,
+        "light": #d05ce3,
+        "dark": #6a0080
+      ),
+      "600": (
+        "neutral": #8e24aa,
+        "light": #c158dc,
+        "dark": #5c007a
+      ),
+      "700": (
+        "neutral": #7b1fa2,
+        "light": #ae52d4,
+        "dark": #4a0072
+      ),
+      "800": (
+        "neutral": #6a1b9a,
+        "light": #9c4dcc,
+        "dark": #38006b
+      ),
+      "900": (
+        "neutral": #4a148c,
+        "light": #7c43bd,
+        "dark": #12005e
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ea80fc,
+        "light": #ffb2ff,
+        "dark": #b64fc8
+      ),
+      "200": (
+        "neutral": #e040fb,
+        "light": #ff79ff,
+        "dark": #aa00c7
+      ),
+      "400": (
+        "neutral": #d500f9,
+        "light": #ff5bff,
+        "dark": #9e00c5
+      ),
+      "700": (
+        "neutral": #aa00ff,
+        "light": #e254ff,
+        "dark": #7200ca
+      ),
+    )),
+  "deeppurple":  (
+    "regular": (
+      "50": (
+        "neutral": #ede7f6,
+        "light": #ffffff,
+        "dark": #bbb5c3
+      ),
+      "100": (
+        "neutral": #d1c4e9,
+        "light": #fff7ff,
+        "dark": #a094b7
+      ),
+      "200": (
+        "neutral": #b39ddb,
+        "light": #e6ceff,
+        "dark": #836fa9
+      ),
+      "300": (
+        "neutral": #9575cd,
+        "light": #c7a4ff,
+        "dark": #65499c
+      ),
+      "400": (
+        "neutral": #7e57c2,
+        "light": #b085f5,
+        "dark": #4d2c91
+      ),
+      "500": (
+        "neutral": #673ab7,
+        "light": #9a67ea,
+        "dark": #320b86
+      ),
+      "600": (
+        "neutral": #5e35b1,
+        "light": #9162e4,
+        "dark": #280680
+      ),
+      "700": (
+        "neutral": #512da8,
+        "light": #8559da,
+        "dark": #140078
+      ),
+      "800": (
+        "neutral": #4527a0,
+        "light": #7953d2,
+        "dark": #000070
+      ),
+      "900": (
+        "neutral": #311b92,
+        "light": #6746c3,
+        "dark": #000063
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #b388ff,
+        "light": #e7b9ff,
+        "dark": #805acb
+      ),
+      "200": (
+        "neutral": #7c4dff,
+        "light": #b47cff,
+        "dark": #3f1dcb
+      ),
+      "400": (
+        "neutral": #651fff,
+        "light": #a255ff,
+        "dark": #0100ca
+      ),
+      "700": (
+        "neutral": #6200ea,
+        "light": #9d46ff,
+        "dark": #0a00b6
+      ),
+    )
+  ),
+  "indigo":  (
+    "regular": (
+      "50": (
+        "neutral":#e8eaf6,
+        "light": #ffffff,
+        "dark": #b6b8c3
+      ),
+      "100": (
+        "neutral": #c5cae9,
+        "light": #f8fdff,
+        "dark": #9499b7
+      ),
+      "200": (
+        "neutral": #9fa8da,
+        "light": #d1d9ff,
+        "dark": #6f79a8
+      ),
+      "300": (
+        "neutral": #7986cb,
+        "light": #aab6fe,
+        "dark": #49599a
+      ),
+      "400": (
+        "neutral": #5c6bc0,
+        "light": #8e99f3,
+        "dark": #26418f
+      ),
+      "500": (
+        "neutral": #3f51b5,
+        "light": #757de8,
+        "dark": #002984
+      ),
+      "600": (
+        "neutral": #3949ab,
+        "light": #6f74dd,
+        "dark": #00227b
+      ),
+      "700": (
+        "neutral": #303f9f,
+        "light": #666ad1,
+        "dark": #001970
+      ),
+      "800": (
+        "neutral": #283593,
+        "light": #5f5fc4,
+        "dark": #001064
+      ),
+      "900": (
+        "neutral": #1a237e,
+        "light": #534bae,
+        "dark": #000051
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #8c9eff,
+        "light": #c0cfff,
+        "dark": #5870cb
+      ),
+      "200": (
+        "neutral": #536dfe,
+        "light": #8f9bff,
+        "dark": #0043ca
+      ),
+      "400": (
+        "neutral": #3d5afe,
+        "light": #8187ff,
+        "dark": #0031ca
+      ),
+      "700": (
+        "neutral": #304ffe,
+        "light": #7a7cff,
+        "dark": #0026ca
+      ),
+    )
+  ),
+  "blue":  (
+    "regular": (
+      "50": (
+        "neutral":#e3f2fd,
+        "light": #ffffff,
+        "dark": #b1bfca
+      ),
+      "100": (
+        "neutral": #bbdefb,
+        "light": #eeffff,
+        "dark": #8aacc8
+      ),
+      "200": (
+        "neutral": #90caf9,
+        "light": #c3fdff,
+        "dark": #5d99c6
+      ),
+      "300": (
+        "neutral": #64b5f6,
+        "light": #9be7ff,
+        "dark": #2286c3
+      ),
+      "400": (
+        "neutral": #42a5f5,
+        "light": #80d6ff,
+        "dark": #0077c2
+      ),
+      "500": (
+        "neutral": #2196f3,
+        "light": #6ec6ff,
+        "dark": #0069c0
+      ),
+      "600": (
+        "neutral": #1e88e5,
+        "light": #6ab7ff,
+        "dark": #005cb2
+      ),
+      "700": (
+        "neutral": #1976d2,
+        "light": #63a4ff,
+        "dark": #004ba0
+      ),
+      "800": (
+        "neutral": #1565c0,
+        "light": #5e92f3,
+        "dark": #003c8f
+      ),
+      "900": (
+        "neutral": #0d47a1,
+        "light": #5472d3,
+        "dark": #002171
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #82b1ff,
+        "light": #b6e3ff,
+        "dark": #4d82cb
+      ),
+      "200": (
+        "neutral": #448aff,
+        "light": #83b9ff,
+        "dark": #005ecb
+      ),
+      "400": (
+        "neutral": #2979ff,
+        "light": #75a7ff,
+        "dark": #004ecb
+      ),
+      "700": (
+        "neutral": #2962ff,
+        "light": #768fff,
+        "dark": #0039cb
+      ),
+    )
+  ),
+  "lightblue":  (
+    "regular": (
+      "50": (
+        "neutral":#e1f5fe,
+        "light": #ffffff,
+        "dark": #afc2cb
+      ),
+      "100": (
+        "neutral": #b3e5fc,
+        "light": #e6ffff,
+        "dark": #82b3c9
+      ),
+      "200": (
+        "neutral": #81d4fa,
+        "light": #b6ffff,
+        "dark": #4ba3c7
+      ),
+      "300": (
+        "neutral": #4fc3f7,
+        "light": #8bf6ff,
+        "dark": #0093c4
+      ),
+      "400": (
+        "neutral": #29b6f6,
+        "light": #73e8ff,
+        "dark": #0086c3
+      ),
+      "500": (
+        "neutral": #03a9f4,
+        "light": #67daff,
+        "dark": #007ac1
+      ),
+      "600": (
+        "neutral": #039be5,
+        "light": #63ccff,
+        "dark": #006db3
+      ),
+      "700": (
+        "neutral": #0288d1,
+        "light": #5eb8ff,
+        "dark": #005b9f
+      ),
+      "800": (
+        "neutral": #0277bd,
+        "light": #58a5f0,
+        "dark": #004c8c
+      ),
+      "900": (
+        "neutral": #01579b,
+        "light": #4f83cc,
+        "dark": #002f6c
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #80d8ff,
+        "light": #b5ffff,
+        "dark": #49a7cc
+      ),
+      "200": (
+        "neutral": #40c4ff,
+        "light": #82f7ff,
+        "dark": #0094cc
+      ),
+      "400": (
+        "neutral": #00b0ff,
+        "light": #69e2ff,
+        "dark": #0081cb
+      ),
+      "700": (
+        "neutral": #0091ea,
+        "light": #64c1ff,
+        "dark": #0064b7
+      ),
+    )
+  ),
+  "cyan":  (
+    "regular": (
+      "50": (
+        "neutral":#e0f7fa,
+        "light": #ffffff,
+        "dark": #aec4c7
+      ),
+      "100": (
+        "neutral": #b2ebf2,
+        "light": #e5ffff,
+        "dark": #81b9bf
+      ),
+      "200": (
+        "neutral": #80deea,
+        "light": #b4ffff,
+        "dark": #4bacb8
+      ),
+      "300": (
+        "neutral": #4dd0e1,
+        "light": #88ffff,
+        "dark": #009faf
+      ),
+      "400": (
+        "neutral": #26c6da,
+        "light": #6ff9ff,
+        "dark": #0095a8
+      ),
+      "500": (
+        "neutral": #00bcd4,
+        "light": #62efff,
+        "dark": #008ba3
+      ),
+      "600": (
+        "neutral": #00acc1,
+        "light": #5ddef4,
+        "dark": #007c91
+      ),
+      "700": (
+        "neutral": #0097a7,
+        "light": #56c8d8,
+        "dark": #006978
+      ),
+      "800": (
+        "neutral": #00838f,
+        "light": #4fb3bf,
+        "dark": #005662
+      ),
+      "900": (
+        "neutral": #006064,
+        "light": #428e92,
+        "dark": #00363a
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #84ffff,
+        "light": #baffff,
+        "dark": #4bcbcc
+      ),
+      "200": (
+        "neutral": #18ffff,
+        "light": #76ffff,
+        "dark": #00cbcc
+      ),
+      "400": (
+        "neutral": #00e5ff,
+        "light": #6effff,
+        "dark": #00b2cc
+      ),
+      "700": (
+        "neutral": #00b8d4,
+        "light": #62ebff,
+        "dark": #0088a3
+      ),
+    )
+  ),
+  "teal":  (
+    "regular": (
+      "50": (
+        "neutral":#e0f2f1,
+        "light": #ffffff,
+        "dark": #aebfbe
+      ),
+      "100": (
+        "neutral": #b2dfdb,
+        "light": #e5ffff,
+        "dark": #82ada9
+      ),
+      "200": (
+        "neutral": #80cbc4,
+        "light": #b2fef7,
+        "dark": #4f9a94
+      ),
+      "300": (
+        "neutral": #4db6ac,
+        "light": #82e9de,
+        "dark": #00867d
+      ),
+      "400": (
+        "neutral": #26a69a,
+        "light": #64d8cb,
+        "dark": #00766c
+      ),
+      "500": (
+        "neutral": #009688,
+        "light": #52c7b8,
+        "dark": #00675b
+      ),
+      "600": (
+        "neutral": #00897b,
+        "light": #4ebaaa,
+        "dark": #005b4f
+      ),
+      "700": (
+        "neutral": #00796b,
+        "light": #48a999,
+        "dark": #004c40
+      ),
+      "800": (
+        "neutral": #00695c,
+        "light": #439889,
+        "dark": #003d33
+      ),
+      "900": (
+        "neutral": #004d40,
+        "light": #39796b,
+        "dark": #00251a
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #a7ffeb,
+        "light": #dbffff,
+        "dark": #75ccb9
+      ),
+      "200": (
+        "neutral": #64ffda,
+        "light": #9effff,
+        "dark": #14cba8
+      ),
+      "400": (
+        "neutral": #1de9b6,
+        "light": #6effe8,
+        "dark": #00b686
+      ),
+      "700": (
+        "neutral": #00bfa5,
+        "light": #5df2d6,
+        "dark": #008e76
+      ),
+    )
+  ),
+  "green":  (
+    "regular": (
+      "50": (
+        "neutral":#e8f5e9,
+        "light": #ffffff,
+        "dark": #b6c2b7
+      ),
+      "100": (
+        "neutral": #c8e6c9,
+        "light": #fbfffc,
+        "dark": #97b498
+      ),
+      "200": (
+        "neutral": #a5d6a7,
+        "light": #d7ffd9,
+        "dark": #75a478
+      ),
+      "300": (
+        "neutral": #81c784,
+        "light": #b2fab4,
+        "dark": #519657
+      ),
+      "400": (
+        "neutral": #66bb6a,
+        "light": #98ee99,
+        "dark": #338a3e
+      ),
+      "500": (
+        "neutral": #4caf50,
+        "light": #80e27e,
+        "dark": #087f23
+      ),
+      "600": (
+        "neutral": #43a047,
+        "light": #76d275,
+        "dark": #00701a
+      ),
+      "700": (
+        "neutral": #388e3c,
+        "light": #6abf69,
+        "dark": #00600f
+      ),
+      "800": (
+        "neutral": #2e7d32,
+        "light": #60ad5e,
+        "dark": #005005
+      ),
+      "900": (
+        "neutral": #1b5e20,
+        "light": #4c8c4a,
+        "dark": #003300
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #b9f6ca,
+        "light": #ecfffd,
+        "dark": #88c399
+      ),
+      "200": (
+        "neutral": #69f0ae,
+        "light": #9fffe0,
+        "dark": #2bbd7e
+      ),
+      "400": (
+        "neutral": #00e676,
+        "light": #66ffa6,
+        "dark": #00b248
+      ),
+      "700": (
+        "neutral": #00c853,
+        "light": #5efc82,
+        "dark": #009624
+      ),
+    )
+  ),
+  "lightgreen":  (
+    "regular": (
+      "50": (
+        "neutral":#f1f8e9,
+        "light": #ffffff,
+        "dark": #bec5b7
+      ),
+      "100": (
+        "neutral": #dcedc8,
+        "light": #fffffb,
+        "dark": #aabb97
+      ),
+      "200": (
+        "neutral": #c5e1a5,
+        "light": #f8ffd7,
+        "dark": #94af76
+      ),
+      "300": (
+        "neutral": #aed581,
+        "light": #e1ffb1,
+        "dark": #7da453
+      ),
+      "400": (
+        "neutral": #9ccc65,
+        "light": #cfff95,
+        "dark": #6b9b37
+      ),
+      "500": (
+        "neutral": #8bc34a,
+        "light": #bef67a,
+        "dark": #5a9216
+      ),
+      "600": (
+        "neutral": #7cb342,
+        "light": #aee571,
+        "dark": #4b830d
+      ),
+      "700": (
+        "neutral": #689f38,
+        "light": #99d066,
+        "dark": #387002
+      ),
+      "800": (
+        "neutral": #558b2f,
+        "light": #85bb5c,
+        "dark": #255d00
+      ),
+      "900": (
+        "neutral": #33691e,
+        "light": #629749,
+        "dark": #003d00
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ccff90,
+        "light": #ffffc2,
+        "dark": #99cc60
+      ),
+      "200": (
+        "neutral": #b2ff59,
+        "light": #e7ff8c,
+        "dark": #7ecb20
+      ),
+      "400": (
+        "neutral": #76ff03,
+        "light": #b0ff57,
+        "dark": #32cb00
+      ),
+      "700": (
+        "neutral": #64dd17,
+        "light": #9cff57,
+        "dark": #1faa00
+      ),
+    )
+  ),
+  "lime":  (
+    "regular": (
+      "50": (
+        "neutral":#f9fbe7,
+        "light": #ffffff,
+        "dark": #c6c8b5
+      ),
+      "100": (
+        "neutral": #f0f4c3,
+        "light": #fffff6,
+        "dark": #bdc192
+      ),
+      "200": (
+        "neutral": #e6ee9c,
+        "light": #ffffce,
+        "dark": #b3bc6d
+      ),
+      "300": (
+        "neutral": #dce775,
+        "light": #ffffa6,
+        "dark": #a8b545
+      ),
+      "400": (
+        "neutral": #d4e157,
+        "light": #ffff89,
+        "dark": #a0af22
+      ),
+      "500": (
+        "neutral": #cddc39,
+        "light": #ffff6e,
+        "dark": #99aa00
+      ),
+      "600": (
+        "neutral": #c0ca33,
+        "light": #f5fd67,
+        "dark": #8c9900
+      ),
+      "700": (
+        "neutral": #afb42b,
+        "light": #e4e65e,
+        "dark": #7c8500
+      ),
+      "800": (
+        "neutral": #9e9d24,
+        "light": #d2ce56,
+        "dark": #6c6f00
+      ),
+      "900": (
+        "neutral": #827717,
+        "light": #b4a647,
+        "dark": #524c00
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #f4ff81,
+        "light": #ffffb3,
+        "dark": #bfcc50
+      ),
+      "200": (
+        "neutral": #eeff41,
+        "light": #ffff78,
+        "dark": #b8cc00
+      ),
+      "400": (
+        "neutral": #c6ff00,
+        "light": #fdff58,
+        "dark": #90cc00
+      ),
+      "700": (
+        "neutral": #aeea00,
+        "light": #e4ff54,
+        "dark": #79b700
+      ),
+    )
+  ),
+  "yellow":  (
+    "regular": (
+      "50": (
+        "neutral": #fffde7,
+        "light": #ffffff,
+        "dark": #cccab5
+      ),
+      "100": (
+        "neutral": #fff9c4,
+        "light": #fffff7,
+        "dark": #cbc693
+      ),
+      "200": (
+        "neutral": #fff59d,
+        "light": #ffffcf,
+        "dark": #cbc26d
+      ),
+      "300": (
+        "neutral": #fff176,
+        "light": #ffffa8,
+        "dark": #cabf45
+      ),
+      "400": (
+        "neutral": #ffee58,
+        "light": #ffff8b,
+        "dark": #c9bc1f
+      ),
+      "500": (
+        "neutral": #ffeb3b,
+        "light": #ffff72,
+        "dark": #c8b900
+      ),
+      "600": (
+        "neutral": #fdd835,
+        "light": #ffff6b,
+        "dark": #c6a700
+      ),
+      "700": (
+        "neutral": #fbc02d,
+        "light": #fff263,
+        "dark": #c49000
+      ),
+      "800": (
+        "neutral": #f9a825,
+        "light": #ffd95a,
+        "dark": #c17900
+      ),
+      "900": (
+        "neutral": #f57f17,
+        "light": #ffb04c,
+        "dark": #bc5100
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ffff8d,
+        "light": #ffffbf,
+        "dark": #cacc5d
+      ),
+      "200": (
+        "neutral": #ffff00,
+        "light": #ffff5a,
+        "dark": #c7cc00
+      ),
+      "400": (
+        "neutral": #ffea00,
+        "light": #ffff56,
+        "dark": #c7b800
+      ),
+      "700": (
+        "neutral": #ffd600,
+        "light": #ffff52,
+        "dark": #c7a500
+      ),
+    )
+  ),
+  "amber":  (
+    "regular": (
+      "50": (
+        "neutral": #fff8e1,
+        "light": #ffffff,
+        "dark": #ccc5af
+      ),
+      "100": (
+        "neutral": #ffecb3,
+        "light": #ffffe5,
+        "dark": #cbba83
+      ),
+      "200": (
+        "neutral": #ffe082,
+        "light": #ffffb3,
+        "dark": #caae53
+      ),
+      "300": (
+        "neutral": #ffd54f,
+        "light": #ffff81,
+        "dark": #c8a415
+      ),
+      "400": (
+        "neutral": #ffca28,
+        "light": #fffd61,
+        "dark": #c79a00
+      ),
+      "500": (
+        "neutral": #ffc107,
+        "light": #fff350,
+        "dark": #c79100
+      ),
+      "600": (
+        "neutral": #ffb300,
+        "light": #ffe54c,
+        "dark": #c68400
+      ),
+      "700": (
+        "neutral": #ffa000,
+        "light": #ffd149,
+        "dark": #c67100
+      ),
+      "800": (
+        "neutral": #ff8f00,
+        "light": #ffc046,
+        "dark": #c56000
+      ),
+      "900": (
+        "neutral": #ff6f00,
+        "light": #ffa040,
+        "dark": #c43e00
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ffe57f,
+        "light": #ffffb0,
+        "dark": #cab350
+      ),
+      "200": (
+        "neutral": #ffd740,
+        "light": #ffff74,
+        "dark": #c8a600
+      ),
+      "400": (
+        "neutral": #ffc400,
+        "light": #fff64f,
+        "dark": #c79400
+      ),
+      "700": (
+        "neutral": #ffab00,
+        "light": #ffdd4b,
+        "dark": #c67c00
+      ),
+    )
+  ),
+  "orange":  (
+    "regular": (
+      "50": (
+        "neutral": #fff3e0,
+        "light": #ffffff,
+        "dark": #ccc0ae
+      ),
+      "100": (
+        "neutral": #ffe0b2,
+        "light": #ffffe4,
+        "dark": #cbae82
+      ),
+      "200": (
+        "neutral": #ffcc80,
+        "light": #ffffb0,
+        "dark": #ca9b52
+      ),
+      "300": (
+        "neutral": #ffb74d,
+        "light": #ffe97d,
+        "dark": #c88719
+      ),
+      "400": (
+        "neutral": #ffa726,
+        "light": #ffd95b,
+        "dark": #c77800
+      ),
+      "500": (
+        "neutral": #ff9800,
+        "light": #ffc947,
+        "dark": #c66900
+      ),
+      "600": (
+        "neutral": #fb8c00,
+        "light": #ffbd45,
+        "dark": #c25e00
+      ),
+      "700": (
+        "neutral": #f57c00,
+        "light": #ffad42,
+        "dark": #bb4d00
+      ),
+      "800": (
+        "neutral": #ef6c00,
+        "light": #ff9d3f,
+        "dark": #b53d00
+      ),
+      "900": (
+        "neutral": #e65100,
+        "light": #ff833a,
+        "dark": #ac1900
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ffd180,
+        "light": #ffffb1,
+        "dark": #caa052
+      ),
+      "200": (
+        "neutral": #ffab40,
+        "light": #ffdd71,
+        "dark": #c77c02
+      ),
+      "400": (
+        "neutral": #ff9100,
+        "light": #ffc246,
+        "dark": #c56200
+      ),
+      "700": (
+        "neutral": #ff6d00,
+        "light": #ff9e40,
+        "dark": #c43c00
+      ),
+    )
+  ),
+  "deeporange":  (
+    "regular": (
+      "50": (
+        "neutral": #fbe9e7,
+        "light": #ffffff,
+        "dark": #c8b7b5
+      ),
+      "100": (
+        "neutral": #ffccbc,
+        "light": #ffffee,
+        "dark": #cb9b8c
+      ),
+      "200": (
+        "neutral": #ffab91,
+        "light": #ffddc1,
+        "dark": #c97b63
+      ),
+      "300": (
+        "neutral": #ff8a65,
+        "light": #ffbb93,
+        "dark": #c75b39
+      ),
+      "400": (
+        "neutral": #ff7043,
+        "light": #ffa270,
+        "dark": #c63f17
+      ),
+      "500": (
+        "neutral": #ff5722,
+        "light": #ff8a50,
+        "dark": #c41c00
+      ),
+      "600": (
+        "neutral": #f4511e,
+        "light": #ff844c,
+        "dark": #b91400
+      ),
+      "700": (
+        "neutral": #e64a19,
+        "light": #ff7d47,
+        "dark": #ac0800
+      ),
+      "800": (
+        "neutral": #d84315,
+        "light": #ff7543,
+        "dark": #9f0000
+      ),
+      "900": (
+        "neutral": #bf360c,
+        "light": #f9683a,
+        "dark": #870000
+      ),
+    ),
+    "accent": (
+      "100": (
+        "neutral": #ff9e80,
+        "light": #ffd0b0,
+        "dark": #c96f53
+      ),
+      "200": (
+        "neutral": #ff6e40,
+        "light": #ffa06d,
+        "dark": #c53d13
+      ),
+      "400": (
+        "neutral": #ff3d00,
+        "light": #ff7539,
+        "dark": #c30000
+      ),
+      "700": (
+        "neutral": #dd2c00,
+        "light": #ff6434,
+        "dark": #a30000
+      ),
+    )
+  ),
+  "brown":  (
+    "regular": (
+      "50": (
+        "neutral": #efebe9,
+        "light": #ffffff,
+        "dark": #bdb9b7
+      ),
+      "100": (
+        "neutral": #d7ccc8,
+        "light": #fffffb,
+        "dark": #a69b97
+      ),
+      "200": (
+        "neutral": #bcaaa4,
+        "light": #efdcd5,
+        "dark": #8c7b75
+      ),
+      "300": (
+        "neutral": #a1887f,
+        "light": #d3b8ae,
+        "dark": #725b53
+      ),
+        "400": (
+        "neutral": #8d6e63,
+        "light": #be9c91,
+        "dark": #5f4339
+      ),
+        "500": (
+        "neutral": #795548,
+        "light": #a98274,
+        "dark": #4b2c20
+      ),
+        "600": (
+        "neutral": #6d4c41,
+        "light": #9c786c,
+        "dark": #40241a
+      ),
+      "700": (
+        "neutral": #5d4037,
+        "light": #8b6b61,
+        "dark": #321911
+      ),
+      "800": (
+        "neutral": #4e342e,
+        "light": #7b5e57,
+        "dark": #260e04
+      ),
+      "900": (
+        "neutral": #3e2723,
+        "light": #6a4f4b,
+        "dark": #1b0000
+      ),
+    )
+  ),
+  "grey":  (
+    "regular": (
+      "50": (
+        "neutral": #fafafa,
+        "light": #ffffff,
+        "dark": #c7c7c7
+      ),
+      "100": (
+        "neutral": #f5f5f5,
+        "light": #ffffff,
+        "dark": #c2c2c2
+      ),
+      "200": (
+        "neutral": #eeeeee,
+        "light": #ffffff,
+        "dark": #bcbcbc
+      ),
+      "300": (
+        "neutral": #e0e0e0,
+        "light": #ffffff,
+        "dark": #aeaeae
+      ),
+        "400": (
+        "neutral": #bdbdbd,
+        "light": #efefef,
+        "dark": #8d8d8d
+      ),
+        "500": (
+        "neutral": #9e9e9e,
+        "light": #cfcfcf,
+        "dark": #707070
+      ),
+        "600": (
+        "neutral": #757575,
+        "light": #a4a4a4,
+        "dark": #494949
+      ),
+      "700": (
+        "neutral": #616161,
+        "light": #8e8e8e,
+        "dark": #373737
+      ),
+      "800": (
+        "neutral": #424242,
+        "light": #6d6d6d,
+        "dark": #1b1b1b
+      ),
+      "900": (
+        "neutral": #212121,
+        "light": #484848,
+        "dark": #000000
+      ),
+    )
+  ),
+  "bluegrey":  (
+    "regular": (
+      "50": (
+        "neutral": #eceff1,
+        "light": #ffffff,
+        "dark": #babdbe
+      ),
+      "100": (
+        "neutral": #cfd8dc,
+        "light": #ffffff,
+        "dark": #9ea7aa
+      ),
+      "200": (
+        "neutral": #b0bec5,
+        "light": #e2f1f8,
+        "dark": #808e95
+      ),
+      "300": (
+        "neutral": #90a4ae,
+        "light": #c1d5e0,
+        "dark": #62757f
+      ),
+        "400": (
+        "neutral": #78909c,
+        "light": #a7c0cd,
+        "dark": #4b636e
+      ),
+        "500": (
+        "neutral": #607d8b,
+        "light": #8eacbb,
+        "dark": #34515e
+      ),
+        "600": (
+        "neutral": #546e7a,
+        "light": #819ca9,
+        "dark": #29434e
+      ),
+      "700": (
+        "neutral": #455a64,
+        "light": #718792,
+        "dark": #1c313a
+      ),
+      "800": (
+        "neutral": #37474f,
+        "light": #62727b,
+        "dark": #102027
+      ),
+      "900": (
+        "neutral": #263238,
+        "light": #4f5b62,
+        "dark": #000a12
+      ),
+    )
+  ),
+);
+
+@each $color, $types in $colors {
+  @each $type, $modifiers in $types {
+    @each $modifier, $value in $modifiers {
+      $get-color: map-get($colors, $color);
+      $get-type: map-get($get-color, $type);
+      $get-modifier: map-get($get-type, $modifier);
+      $get-neutral-value: map-get($get-modifier, "neutral");
+      $get-light-value: map-get($get-modifier, "light");
+      $get-dark-value: map-get($get-modifier, "dark");
+
+      @if ($type=="regular") {
+        .#{$color}-#{$modifier} {
+          color: $get-neutral-value;
+
+          &-light {
+            color: $get-light-value;
+          }
+
+          &-dark {
+            color: $get-dark-value;
+          }
+        }
+
+        .bg-#{$color}-#{$modifier} {
+          background-color: $get-neutral-value;
+
+          &-light {
+            background-color: $get-light-value;
+          }
+
+          &-dark {
+            background-color: $get-dark-value;
+          }
+        }
+      }
+
+      @else {
+        .#{$color}-#{$modifier} {
+          &-accent {
+            color: $get-neutral-value;
+          }
+
+          &-light-accent {
+            color: $get-neutral-value;
+          }
+
+          &-dark-accent {
+            color: $get-neutral-value;
+          }
+        }
+
+        .bg-#{$color}-#{$modifier} {
+          &-accent {
+            background-color: $get-neutral-value;
+          }
+
+          &-light-accent {
+            background-color: $get-light-value;
+          }
+
+          &-dark-accent {
+            background-color: $get-dark-value;
+          }
+        }
+      }
+    }
+  }
+}
+
+@function material($color, $modifier: 500, $lightness: "neutral", $type: "regular") {
+  $get-color: map-get($colors, $color);
+  @if ($get-color !=null) {
+    $get-type: map-get($get-color, $type);
+    @if ($get-type !=null) {
+      $get-modifier: map-get($get-type, #{$modifier});
+      @if ($get-modifier !=null) {
+        $get-lightness: "neutral";
+        @if ($lightness != null) {
+          $get-lightness: $lightness;
+        }
+        $get-final-value: map-get($get-modifier, $get-lightness);
+        @if ($get-final-value !=null) {
+          $get-value: $get-final-value !global;
+        }
+      }
+    }
+  }
+
+  @return $get-value;
+}

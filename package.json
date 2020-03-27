@@ -1,0 +1,24 @@
+{
+  "name": "material-palette",
+  "version": "1.0.0",
+  "description": "material-palette is the lightweight styles package of material colors.",
+  "scripts": {
+    "commit": "git-cz",
+    "release": "standard-version"
+  },
+  "author": "Carlos José Pisarello",
+  "license": "ISC",
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "cz-customizable": "^6.2.0",
+    "standard-version": "^7.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz-config.js"
+    }
+  }
+}
