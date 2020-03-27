@@ -27,11 +27,6 @@ module.exports = {
 
   scopes: [],
 
-  allowTicketNumber: true,
-  isTicketNumberRequired: false,
-  ticketNumberPrefix: '',
-  ticketNumberRegExp: '',
-
   messages: {
     type: "Select the type of change that you're committing:",
     scope: '\nDenote the SCOPE of this change (optional):',

@@ -1,7 +1,7 @@
 {
   "name": "material-palette",
   "version": "1.0.0",
-  "description": "material-palette is the lightweight styles package of material colors.",
+  "description": "Material palette is the lightweight sass package of material colors.",
   "scripts": {
     "commit": "git-cz",
     "release": "standard-version"
