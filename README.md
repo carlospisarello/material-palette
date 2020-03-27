@@ -7,7 +7,7 @@ There are two ways in which you can take advantage of the library:
 
 ## Using Material palette with classes
 
-Material palette includes classes with `color` and `background-color` css properties, it's as simple as writing the name of the color, the number on the scale and the lightness desired and the optional accent keyword
+Material palette includes classes with `color` and `background-color` css properties, it's as simple as writing the name of the color, the number on the scale, the lightness desired and the optional accent keyword
 
 ```
 <h1 class="red-400-light-accent">This title will be rendered with the light accented Red 400 color</h1> 
@@ -78,7 +78,7 @@ Set the `border-color` property to accented Deep Orange 700:
 
 Manually set the `background-color` property to light Lime 500:
 
-`border-color: material("deeporange", 700, "light")`
+`border-color: material("lime", 700, "light")`
 
 
 
